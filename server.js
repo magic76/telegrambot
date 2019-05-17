@@ -10,7 +10,7 @@ const externalUrl = process.env.CUSTOM_ENV_VARIABLE || 'https://telegrambot77.he
 // This informs the Telegram servers of the new webhook.
 // Note: we do not need to pass in the cert, as it already provided
 // bot.setWebHook(`${externalUrl}:443/bot${token}`);
-bot.setWebHook(`${url}/bot${token}`);
+bot.setWebHook(`https://telegrambot77.herokuapp.com:443/bot${token}`);
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
