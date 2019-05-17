@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '843900086:AAHXB7we1Kqh32iMjkYQXuEk_DCEXKb711M';
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, { webHook: {port: process.env.PORT || 443  }});
+let bot = new TelegramBot(token, { webHook: { port: process.env.PORT || 443  }});
 const url = process.env.APP_URL || 'https://telegrambot77.herokuapp.com:443';
 const externalUrl = process.env.CUSTOM_ENV_VARIABLE || 'https://telegrambot77.herokuapp.com',
 // This informs the Telegram servers of the new webhook.
