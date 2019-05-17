@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 const token = '843900086:AAHXB7we1Kqh32iMjkYQXuEk_DCEXKb711M';
 
 // Create a bot that uses 'polling' to fetch new updates
-const bot = new TelegramBot(token, {polling: true, webHook: {port: process.env.PORT}});
+const bot = new TelegramBot(token, { webHook: {port: process.env.PORT || 3000 }});
 
 // Matches "/echo [whatever]"
 bot.onText(/\/echo (.+)/, (msg, match) => {
@@ -18,6 +18,12 @@ bot.onText(/\/echo (.+)/, (msg, match) => {
   // send back the matched "whatever" to the chat
   bot.sendMessage(chatId, resp);
 });
+
+const url = process.env.APP_URL || 'https://telegrambot77.herokuapp.com:443';
+
+// This informs the Telegram servers of the new webhook.
+// Note: we do not need to pass in the cert, as it already provided
+bot.setWebHook(`${url}/bot${token}`);
 
 // Listen for any kind of message. There are different kinds of
 // messages.
