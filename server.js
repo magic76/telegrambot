@@ -4,7 +4,7 @@ const TelegramBot = require('node-telegram-bot-api');
 // const app = express();
 
 // replace the value below with the Telegram token you receive from @BotFather
-const token = '843900086:AAHXB7we1Kqh32iMjkYQXuEk_DCEXKb711M';
+const token = '843900086:AAHpbpEjDCFCujjznQJRJvw_RjvXRdO6yvw';
 
 // Create a bot that uses 'polling' to fetch new updates
 let bot = new TelegramBot(token, {webHook:{port: process.env.PORT || 443}});
